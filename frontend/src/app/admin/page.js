@@ -50,7 +50,7 @@ export default function AdminPage() {
       const fetchApps = async () => {
         setLoadingApps(true);
         try {
-          const res = await axios.get('http://localhost:5000/api/applications');
+          const res = await axios.get('https://unizoy-job-board.onrender.com/api/applications');
           setApplications(res.data);
         } catch (error) {
           console.error('Error fetching applications', error);
@@ -72,7 +72,7 @@ export default function AdminPage() {
   const fetchJobs = async () => {
     setLoadingJobs(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/jobs');
+      const res = await axios.get('https://unizoy-job-board.onrender.com/api/jobs');
       setJobs(res.data);
     } catch (error) {
       console.error('Error fetching jobs', error);
@@ -86,7 +86,7 @@ export default function AdminPage() {
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
     try {
-      await axios.post('http://localhost:5000/api/jobs', formData);
+      await axios.post('https://unizoy-job-board.onrender.com/api/jobs', formData);
       setStatus({ type: 'success', message: 'Job published successfully to the live board!' });
       // NEW: Reset form with the new fields
       setFormData({ title: '', description: '', location: '', workMode: 'Remote', employmentType: 'Full-Time' }); 
@@ -101,7 +101,7 @@ export default function AdminPage() {
   const handleDeleteJob = async (id) => {
     if (!window.confirm('Are you sure you want to delete this job? It will be removed from the live site.')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+      await axios.delete(`https://unizoy-job-board.onrender.com/api/jobs/${id}`);
       setJobs(jobs.filter(job => job._id !== id));
     } catch (error) {
       alert('Failed to delete job');
@@ -112,7 +112,7 @@ export default function AdminPage() {
   const handleUpdateJob = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/jobs/${editingJob._id}`, editingJob);
+      await axios.put(`https://unizoy-job-board.onrender.com/api/jobs/${editingJob._id}`, editingJob);
       setEditingJob(null);
       fetchJobs(); // Refresh the list
     } catch (error) {

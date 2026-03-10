@@ -34,7 +34,7 @@ export default function ApplyPage() {
     setStatus({ type: '', message: '' });
 
     try {
-      await axios.post('http://localhost:5000/api/apply', { jobId, ...formData });
+      await axios.post('https://unizoy-job-board.onrender.com/api/apply', { jobId, ...formData });
       setStatus({ type: 'success', message: 'Application submitted! Redirecting...' });
       setTimeout(() => router.push('/'), 2000);
     } catch (error) {
