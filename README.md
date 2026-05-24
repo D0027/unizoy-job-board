@@ -11,7 +11,7 @@
 
 **A clean, modern, production-ready job board built for Unizoy — featuring a public careers page, a candidate application flow, and a secure admin dashboard to post, manage, and review applicants.**
 
-[🌐 Live Demo](https://unizoy-job-board.onrender.com) · [📋 Admin Portal](#admin-portal) · [🚀 Quick Start](#-quick-start)
+[🌐 Live Demo](https://unizoy-job-board-b8qs.vercel.app/) · [📋 Admin Portal](#admin-portal) · [🚀 Quick Start](#-quick-start)
 
 </div>
 
